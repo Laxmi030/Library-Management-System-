@@ -13,7 +13,7 @@ class Book {
         this.isAvailable = true;
     }
 
-    // Borrow the book
+  
     public void borrowBook() {
         if (isAvailable) {
             isAvailable = false;
@@ -23,7 +23,7 @@ class Book {
         }
     }
 
-    // Return the book
+ 
     public void returnBook() {
         if (!isAvailable) {
             isAvailable = true;
@@ -56,7 +56,7 @@ public class LibraryManagementSystem {
             System.out.println("6. Exit");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
             switch (choice) {
                 case 1:
                     addBook();
@@ -83,7 +83,7 @@ public class LibraryManagementSystem {
         }
     }
 
-    // Add a new book to the library
+  
     public static void addBook() {
         System.out.print("Enter book title: ");
         String title = scanner.nextLine();
@@ -94,7 +94,7 @@ public class LibraryManagementSystem {
         System.out.println("Book added: " + newBook);
     }
 
-    // Display all books in the library
+ 
     public static void displayBooks() {
         if (library.isEmpty()) {
             System.out.println("No books available.");
@@ -105,7 +105,7 @@ public class LibraryManagementSystem {
         }
     }
 
-    // Search for a book by title or author
+   
     public static void searchBook() {
         System.out.print("Enter book title or author: ");
         String query = scanner.nextLine().toLowerCase();
@@ -121,11 +121,11 @@ public class LibraryManagementSystem {
         }
     }
 
-    // Borrow a book from the library
+  
     public static void borrowBook() {
         System.out.print("Enter the book number to borrow: ");
         int bookNumber = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
         if (bookNumber > 0 && bookNumber <= library.size()) {
             library.get(bookNumber - 1).borrowBook();
         } else {
@@ -133,11 +133,11 @@ public class LibraryManagementSystem {
         }
     }
 
-    // Return a borrowed book
+   
     public static void returnBook() {
         System.out.print("Enter the book number to return: ");
         int bookNumber = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
         if (bookNumber > 0 && bookNumber <= library.size()) {
             library.get(bookNumber - 1).returnBook();
         } else {
@@ -145,7 +145,7 @@ public class LibraryManagementSystem {
         }
     }
 
-    // Load books from a file
+   
     public static void loadBooks() {
         try {
             File file = new File("library.txt");
@@ -163,7 +163,7 @@ public class LibraryManagementSystem {
         }
     }
 
-    // Save books to a file
+    
     public static void saveBooks() {
         try {
             FileWriter writer = new FileWriter("library.txt");
